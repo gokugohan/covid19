@@ -3,19 +3,15 @@
 }
 
 
-@{ 
-    <style>
-        #map-container{
-            height:100vh;
-        }
-    </style>
+@section css{
+    <link href="~/lib/leafletjs/css/leaflet.css" rel="stylesheet" />
+    <link href="~/lib/leafletjs/css/style.css" rel="stylesheet" />
 }
 
 @await Html.PartialAsync("_hero")
 
 
 <ul id="input-select-country" class="sidenav">
-    
 </ul>
 
 <div class="contact-info container-wide">
@@ -31,7 +27,7 @@
                     </p>
                     <br />
                     <small><i><a href="https://covid19.gov.tl/" target="_blank"><i>Source: https://covid19.gov.tl/</i></a></i></small>
-                  
+
             </ul>
         </div>
         <div class="col m6 contact-info-right">
@@ -71,7 +67,7 @@
 </div>
 
 <div class="case">
-    
+
     <div class="case-row row">
         <div class="case-row-left col m6 valign-wrapper">
             <div class="container-wide">
@@ -154,9 +150,6 @@
 </div>
 
 
-
-
-
 <div id="features" class="features">
     <div class="container-wide">
         <div class="features-container">
@@ -198,68 +191,17 @@
     <h4>There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...</h4>
 </div>
 
-<div class="container-wide" id="map-container">
+<div class="map-container">
     <h4 class="center">Map view</h4>
+    <div class="divider"></div>
+    <div id="map-canvas"></div>
 </div>
 
-<div id="modal-tls-table" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h4>Quarantine Monitoring In Each Municipality</h4>
-        <table class="table table-hover table-tls-quarantine responsive-table">
-            <thead>
-                <tr>
-                    <th>Municipality</th>
-                    <th>Mandatory Quarantine</th>
-                    <th>Auto-Quarantine</th>
-                    <th>Passed 14 quarantine days</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="today-tls-item-quarantine">
-            </tbody>
-        </table>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
 
-<div id="modal-tls-download" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h4>Download file</h4>
-        <p>List of files to be added!</p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
+@await Html.PartialAsync("_Modals")
 
-<div id="modal-world-table" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <table class="table table-hover responsive-table" id="table-countries">
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>Total Cases</th>
-                    <th>Death</th>
-                    <th>Today's Death</th>
-                    <th>Recovered</th>
-                </tr>
-            </thead>
-            <tbody id="countries-table-body"></tbody>
-        </table>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
 
-<div id="modal-graph" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h4 id="modal-graph-title"></h4>
-        <div id="canvas"></div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-</div>
+@section scripts{
+    <script src="~/lib/leafletjs/js/leaflet.js"></script>
+    <script src="~/lib/leafletjs/js/map.js"></script>
+}
