@@ -28,8 +28,9 @@ namespace Covid19.Web.Areas.Api.Controllers
         public IList<string> Get()
         {
             return new List<string> { 
-                "/api/quarantines/today", 
-                "/api/quarantines/year/month/day",
+                "/api/quarantines/today",
+                "today/{municipality}",
+                "/api/quarantines/{year}/{month}/{day}",
                 "/api/quarantines/group_by_date",
                 "/api/quarantines/group_by_municipio"
             };
@@ -40,10 +41,30 @@ namespace Covid19.Web.Areas.Api.Controllers
         [HttpGet("today")]
         public async Task<IEnumerable<QuarantineViewModel>> GetToday()
         {
-            var now = Util.ConvertDateTimeToUTC9(DateTime.Now);
+            var today = Util.ConvertDateTimeToUTC9(DateTime.Now);
             
-            return this.mapper.Map<IEnumerable<QuarantineViewModel>>(await this.repository.Quarantine.GetQuarantinesByCreatedDateAsync(now));
+            return this.mapper.Map<IEnumerable<QuarantineViewModel>>(await this.repository.Quarantine.GetQuarantinesByCreatedDateAsync(today));
         }
+
+        // GET: api/Cases/5
+        [HttpGet("today/{municipality}")]
+        public async Task<QuarantineViewModel> GetTodayByMunicipio(string municipality)
+        {
+            var today = Util.ConvertDateTimeToUTC9(DateTime.Now);
+            var result = await this.repository.Quarantine.GetQuarantinByMunicipioAsync(municipality, today);
+
+            if (result != null)
+            {
+                return this.mapper.Map<QuarantineViewModel>(result);
+            }
+
+            return new QuarantineViewModel { };
+            
+        }
+
+
+
+
 
 
         [HttpGet("{year}/{month}/{day}")]

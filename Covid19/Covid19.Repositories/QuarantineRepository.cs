@@ -25,19 +25,27 @@ namespace Covid19.Repositories
         {
             return this.Context.Quarantines.Select(m => m.CreatedAt.Date).Distinct().ToList();
         }
+
+
         public async Task<IEnumerable<DateTime>> GetDateTimesAsync()
         {
             return await this.Context.Quarantines.Select(m => m.CreatedAt.Date).Distinct().ToListAsync();
         }
 
+        
+
         public IEnumerable<Quarantine> GetQuarantinesByCreatedDate(DateTime dateTime)
         {
             return this.Context.Quarantines.Where(m => m.CreatedAt.Date.Equals(dateTime.Date)).ToList();
         }
+
+
         public async Task<IEnumerable<Quarantine>> GetQuarantinesByCreatedDateAsync(DateTime dateTime)
         {
             return await this.Context.Quarantines.Where(m => m.CreatedAt.Date.Equals(dateTime.Date)).ToListAsync();
         }
+
+
 
 
         public IEnumerable<QuarantineGroupByDateModel> QuarantinesGroupByCreatedAt()
@@ -63,6 +71,19 @@ namespace Covid19.Repositories
         }
 
 
+        public Quarantine GetQuarantinByMunicipio(string municipio, DateTime today)
+        {
+            var result = this.Context.Quarantines.Where(m => m.CreatedAt.Date.Equals(today.Date)).Where(m => m.Munisipio.ToLower().Equals(municipio.ToLower())).SingleOrDefault();
+            return result ?? null;
+        }
+
+        public async Task<Quarantine> GetQuarantinByMunicipioAsync(string municipio, DateTime today)
+        {
+            var result = await this.Context.Quarantines.Where(m => m.CreatedAt.Date.Equals(today.Date))
+                .Where(m => m.Munisipio.ToLower().Equals(municipio.ToLower())).SingleOrDefaultAsync();
+            
+            return result ?? null;
+        }
 
         public IEnumerable<QuarantineGroupMunicipioteModel> QuarantinesGroupByMunicipio()
         {

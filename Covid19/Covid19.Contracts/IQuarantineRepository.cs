@@ -17,6 +17,9 @@ namespace Covid19.Contracts
         Task<IEnumerable<DateTime>> GetDateTimesAsync();
         IEnumerable<QuarantineGroupByDateModel> QuarantinesGroupByCreatedAt();
         //IEnumerable<QuarantineGroupByDateModel> QuarantinesGroupByCreatedAt(DateTime date);
+
+        Quarantine GetQuarantinByMunicipio(string municipio, DateTime today);
+        Task<Quarantine> GetQuarantinByMunicipioAsync(string municipio, DateTime today);
         IEnumerable<QuarantineGroupMunicipioteModel> QuarantinesGroupByMunicipio();
 
         //IEnumerable<QuarantineGroupMunicipioteModel> QuarantinesGroupByMunicipio(DateTime dateTime);
