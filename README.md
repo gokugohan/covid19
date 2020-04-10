@@ -21,13 +21,14 @@ Passatempo ba quarentena iha uma hodi halo webapp ne ho objetivo atualização d
 
 - Endpoint For quarantines: <a href="http://covid19.chebre.net/api/quarantines" target="_blank">http://covid19.chebre.net/api/quarantines</a>
 - Endpoint For quarantines today: /api/quarantines/today
-- Endpoint For quarantines by date: /api/quarantines/year/month/day
+- Endpoint For quarantines today: /api/quarantines/today/{munipality}
+- Endpoint For quarantines by date: /api/quarantines/{year}/{month}/{day}
 - Endpoint For quarantines group by date: /api/quarantines/group_by_date
 - Endpoint For quarantines group by municipalities: /api/quarantines/group_by_municipio
 
 - Endpoint For cases: <a href="http://covid19.chebre.net/api/cases" target="_blank">http://covid19.chebre.net/api/cases</a>
 - Endpoint For cases today: /api/cases/today
-- Endpoint For cases by date: /api/cases/year/month/day
+- Endpoint For cases by date: /api/cases/{year}/{month}/{day}
 - Endpoint For cases group by date: /api/cases/group_by_date
 
 NB: Ba Api Endpoint hau realmente kria project web api ketak, mas como iha problema ituan iha deployment, então hau duplica codigo mai iha web project hodi cria area ba api
