@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+<div class="row" id="today-tls-item-cases"></div>
+<!--/.row-->
+
+
+<div class="load-data-tls-container">
+    <div class="form-inline">
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Month</div>
+            </div>
+            <select class="form-control" id="select_month" name="select_month">
+                <option value="">Select Month</option>
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Abr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Day</div>
+            </div>
+            <select class="form-control" name="select_day" id="select_day"></select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mb-2" id="btn-load-tls-data">Submit</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Município</th>
+                        <th>Karantina Obrigatório</th>
+                        <th>Auto-Karantina</th>
+                        <th>Passa ona 14 dias</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="today-tls-item-quarantine">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/dashboard.js"></script>
+}

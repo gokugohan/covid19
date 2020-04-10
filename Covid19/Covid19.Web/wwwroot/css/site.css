@@ -1,0 +1,334 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f62d51;
+}
+
+nav {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+    nav.nav-scrolled {
+        background-color: #10a98d;
+    }
+
+.container-wide {
+    padding: 0 2em;
+}
+
+#menu {
+    background-color: #19cfe4;
+}
+
+.parallax-container {
+    /*margin-top: -64px;*/
+}
+
+    .parallax-container .banner-container {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-50%);
+        background: rgba(255,255,255,0.1);
+        border-radius: 5px;
+    }
+
+
+        .parallax-container .banner-container .header {
+            color: #f62d51;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .parallax-container .banner-container .quote {
+            color: #f62d51;
+            text-transform: lowercase;
+            font-style: italic;
+        }
+
+        .parallax-container .banner-container .banner-button{
+            padding: 8px 28px;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 240px;
+            border-radius: 100px;
+            background-color: #F62D51;
+            z-index: 0;
+            letter-spacing: .5px;
+            font-weight: 500;
+            color:#fff;
+            text-transform:uppercase;
+        }
+
+            .parallax-container .banner-container .banner-button:hover {
+                /*background: #94c045;*/
+                background: none;
+                border: 1px solid #F62D51;
+            }
+
+
+#btn-load-tls-data {
+    max-width: 240px;
+    border-radius: 100px;
+    background-color: #F62D51;
+    z-index: 0;
+    letter-spacing: .5px;
+    font-weight: 500;
+}
+
+.section-container {
+    padding-top: 100px;
+    /* padding-bottom: 100px; */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .section-container .section-title {
+        color: #262c38;
+        margin: 0 0 10px 0;
+        font-size: 3em;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
+        text-align: center;
+    }
+
+    .section-container .section-body {
+        padding: 0 40px;
+        margin-top: 4em;
+        text-align: justify;
+    }
+
+        .section-container .section-body h4 {
+            font-size: 2em;
+            color: #262c38;
+            letter-spacing: 1px;
+            position: relative;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-bottom: 1em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+        }
+
+        .section-container .section-body .image {
+            overflow: hidden;
+        }
+
+            .section-container .section-body .image img {
+                /*margin: 20px;*/
+                border: 15px solid #ccc;
+                transition: transform .5s ease;
+            }
+
+                .section-container .section-body .image img:hover {
+                    transform: scale(1.05);
+                }
+
+.parallax-banner {
+    min-height: 350px;
+    background: url(/images/matebian1.jpg) no-repeat;
+    background: url(/images/matebian1.jpg) no-repeat;
+    background: url(/images/matebian1.jpg) no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+}
+
+    .parallax-banner h4 {
+        color: #fff;
+        font-size: 2.2em;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin: 0 auto;
+        width: 62%;
+        text-align: center;
+        line-height: 1.8em;
+    }
+
+
+.card{
+    display:block !important;
+}
+
+.card-content span.ponto-actual-text,
+.card-content span.ponto-actual-number,
+.card-content span.ponto-actual-text, .card-content span.ponto-actual-number {
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.card-content span.ponto-actual-number, .card-content span.ponto-actual-number {
+    margin-top:5px;
+    color:#ddd;
+    font-size: 1.75rem;
+}
+
+
+#modal-account{
+    width:30% !important;
+}
+
+
+
+
+
+.contact-info {
+    margin-top: -20px;
+    background-color: #F9F9FA;
+    color: #A1A7AF;
+    font-weight: 400;
+}
+    .contact-info h5{
+        text-transform:uppercase;
+    }
+
+    .contact-info > .row > .col {
+        padding: 30px 0;
+    }
+
+    .contact-info .contact-info-left {
+        padding-right:.75rem !important;
+    }
+    .contact-info .contact-info-right {
+        padding-left:.75rem !important;
+    }
+
+
+
+        .contact-info .contact-info-right .load-data-tls-container .card-panel {
+            padding-top:10px;
+        }
+
+            .contact-info .contact-info-right .load-data-tls-container .card-panel h4.text-info-tls {
+                border-bottom: 1px solid #e0e0e0;
+                padding: 10px 20px;
+            }
+
+    .case {
+        padding-top: 80px;
+        color: #6c747f;
+        background: url(https://localhost:44393/images/bg.PNG);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .case .case-row {
+        margin-bottom: 0;
+        padding-top:1.5rem;
+    }
+
+    .case .case-row-content{
+        padding-top:1.5rem;
+    }
+
+    .case .case-header {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 2rem;
+        color: #fff;
+    }
+
+
+    .case .case-row-left {
+        border-right: 3px dashed HSLA(205, 85%, 92%, 1);
+        min-height: 400px;
+        padding-bottom: 20px;
+    }
+
+
+    .case .case-row-title {
+        font-size: 35px;
+        margin-top: 0;
+        max-width: 450px;
+    }
+
+
+
+    .features {
+        padding: 100px 0 120px;
+    }
+
+        .features .features-divider {
+            text-align: center;
+            color: #F62D51;
+            margin-bottom: 60px;
+        }
+
+            .features .features-divider i {
+                font-size: 27px;
+            }
+
+        .features .features-title {
+            font-size: 40px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .features .feature-icon {
+            height: 100px;
+            width: 100px;
+            border: 3px solid #F62D51;
+            border-radius: 1000px;
+            text-align: center;
+            margin: 70px auto 0;
+        }
+
+            .features .feature-icon i {
+                color: #F62D51;
+                font-size: 50px;
+                line-height: 96px;
+            }
+
+        .features .feature-title {
+            padding-top: 20px;
+            text-align: center;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .features .feature-description {
+            padding-top: 10px;
+            text-align: center;
+            color: #6c747f;
+        }
+
+
+    #table-countries_wrapper select {
+        display: block !important;
+    }
+
+
+
+
+
+footer.page-footer {
+    color: #000;
+    margin-top: 40px;
+    background-color: #F62D51;
+    border-top: 1px solid rgba(0,0,0,0.14);
+}
+    footer .footer-copyright {
+        background-color: transparent !important;
+    }

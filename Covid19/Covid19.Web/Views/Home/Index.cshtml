@@ -1,0 +1,265 @@
+﻿@{
+    ViewData["Title"] = "HC";
+}
+
+
+@{ 
+    <style>
+        #map-container{
+            height:100vh;
+        }
+    </style>
+}
+
+@await Html.PartialAsync("_hero")
+
+
+<ul id="input-select-country" class="sidenav">
+    
+</ul>
+
+<div class="contact-info container-wide">
+    <div class="row">
+        <div class="col m6 contact-info-left">
+            <ul class="collection with-header">
+                <li class="collection-header"><h5>Ministry of Health Hotlines</h5></li>
+                <li class="collection-item">
+                    <p>
+                        +670 78258707 <br />
+                        +670 77861000 <br />
+                        +670 77942457 <br />
+                    </p>
+                    <br />
+                    <small><i><a href="https://covid19.gov.tl/" target="_blank"><i>Source: https://covid19.gov.tl/</i></a></i></small>
+                  
+            </ul>
+        </div>
+        <div class="col m6 contact-info-right">
+            <div class="load-data-tls-container">
+                <div class="card-panel">
+                    <h5 class="text-info-tls">Available data from 04-04-2020.</h5>
+                    <div class="row">
+                        <div class="input-field col s12 m5">
+                            <select id="select_month" name="select_month">
+                                <option value="">Select Month</option>
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Abr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s12 m5">
+                            <select name="select_day" id="select_day"></select>
+                        </div>
+                        <div class="input-field col s12 m2">
+                            <button type="submit" class="btn waves-effect waves-light" id="btn-load-tls-data">Submit <i class="material-icons right">send</i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="case">
+    
+    <div class="case-row row">
+        <div class="case-row-left col m6 valign-wrapper">
+            <div class="container-wide">
+                <div class="case-row-content">
+                    <h3 class="case-row-title">Timor-Leste</h3>
+                    <div class="row mb-4" id="today-tls-item-cases">
+                        <div class="col s12">
+                            <div class="card-panel">
+                                <h5 class="red-text">Today's data is not uploaded yet. Try again later!</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="case-row-right col m6 no-right-padding valign">
+            <div class="container-wide">
+                <div class="case-row-content">
+                    <h3 class="case-row-title">Global</h3>
+                    <div class="row">
+                        <div class="col s12 m6 l4">
+                            <div class="card blue lighten-2 waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Total cases</span>
+                                    <span id="total-cases" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l4">
+                            <div class="card blue waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Today cases</span>
+                                    <span id="today-cases" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l4">
+                            <div class="card red accent-4 waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Total deaths</span>
+                                    <span id="total-death" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l4">
+                            <div class="card red accent-4 waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Today deaths</span>
+                                    <span id="today-death" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l4">
+                            <div class="card green waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Recovered</span>
+                                    <span id="recovered" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l4">
+                            <div class="card blue lighten-2 waves-effect waves-teal">
+                                <div class="card-content">
+                                    <span class="ponto-actual-text">Active</span>
+                                    <span id="active" class="ponto-actual-number"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="features" class="features">
+    <div class="container-wide">
+        <div class="features-container">
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div class="feature-icon">
+                        <a href="#!" id="btn-view-tls-table"><i class="material-icons">border_outer</i></a>
+                    </div>
+                    <div class="feature-title">View Quarantine Monitoring In Each Municipality</div>
+                </div>
+
+                <div class="col s12 m6 l3">
+                    <div class="feature-icon">
+                        <a href="#!" id="btn-view-tls-download"><i class="material-icons">file_download</i></a>
+                    </div>
+                    <div class="feature-title">Download Covid-19 Data</div>
+                </div>
+
+
+                <div class="col s12 m6 l3">
+                    <div class="feature-icon">
+                        <a href="#!" id="btn-view-world-table"><i class="material-icons">format_list_bulleted</i></a>
+                    </div>
+                    <div class="feature-title">Countries by nº of Cases</div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="feature-icon">
+                        <a href="#!" data-target="input-select-country" class="sidenav-trigger"><i class="material-icons">graphic_eq</i></a>
+                    </div>
+                    <div class="feature-title">Graph of Country Cases</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="parallax-banner">
+    <h4>There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...</h4>
+</div>
+
+<div class="container-wide" id="map-container">
+    <h4 class="center">Map view</h4>
+</div>
+
+<div id="modal-tls-table" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quarantine Monitoring In Each Municipality</h4>
+        <table class="table table-hover table-tls-quarantine responsive-table">
+            <thead>
+                <tr>
+                    <th>Municipality</th>
+                    <th>Mandatory Quarantine</th>
+                    <th>Auto-Quarantine</th>
+                    <th>Passed 14 quarantine days</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="today-tls-item-quarantine">
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+<div id="modal-tls-download" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Download file</h4>
+        <p>List of files to be added!</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+<div id="modal-world-table" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <table class="table table-hover responsive-table" id="table-countries">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Total Cases</th>
+                    <th>Death</th>
+                    <th>Today's Death</th>
+                    <th>Recovered</th>
+                </tr>
+            </thead>
+            <tbody id="countries-table-body"></tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+<div id="modal-graph" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4 id="modal-graph-title"></h4>
+        <div id="canvas"></div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>

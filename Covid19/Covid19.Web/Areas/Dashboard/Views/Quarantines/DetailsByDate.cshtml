@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Covid19.Entities.Models.Quarantine>
+@{
+    ViewData["Title"] = "DetailsByDate";
+}
+
+    <div class="container">
+
+        <div class="table-responsive">
+            <h1 class="mt-4">Quarantine data for @ViewData["datetime"]</h1>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Município</th>
+                        <th>Karantina obrigatório</th>
+                        <th>Auto-Karantina</th>
+                        <th>Passa karantina(14 dias)</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Munisipio</td>
+                            <td>@item.KuarentenaObrigatorio</td>
+                            <td>@item.AutoKuarentena</td>
+                            <td>@item.PassaQuarentena</td>
+
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>

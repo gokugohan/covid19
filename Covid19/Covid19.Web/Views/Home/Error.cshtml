@@ -1,0 +1,32 @@
+﻿@{ 
+    ViewData["Title"] = "DetailsByDate";
+    Layout = null;
+}
+
+<style>
+    
+.error-container {
+    margin: 0;
+    background: url("../images/bg.PNG") top center;
+    background-size: cover;
+}
+
+    .error-container > .container {
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(255,255,255,0.5);
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        padding: 30px;
+    }
+
+</style>
+
+<div class="error-container">
+    <section class="container">
+        <h1 class="text-danger">Upsss... @ViewBag.Message</h1>
+    </section>
+</div>

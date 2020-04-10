@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DateTime>
+
+@{
+    ViewData["Title"] = "Quarantines";
+}
+
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Upload Data Here</div>
+            <div class="card-body">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @ViewData["messageToDb"]
+                @ViewData["message"]
+
+                @if (@ViewBag.Message != null)
+                {
+                    <div class="alert alert-primary" role="alert">
+                        @ViewBag.Message
+                    </div>
+                }
+
+
+            <form enctype="multipart/form-data" method="post" asp-action="Upload">
+                <div class="form-group">
+                    <label for="UploadFile" class="control-label">File to upload</label>
+                    <input name="UploadFile" id="UploadFile" class="form-control" type="file" required />
+                </div>
+                <div class="form-group">
+                    <label for="SelectedDate" class="control-label">Date</label>
+                    <input id="SelectedDate" name="SelectedDate" type="date" class="form-control" />
+                </div>
+                <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ToShortDateString()</td>
+                        <td><a asp-action="DetailsByDate" asp-route-date="@item.ToString("yyyy-MM-dd")">Details</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

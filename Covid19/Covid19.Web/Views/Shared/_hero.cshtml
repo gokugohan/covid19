@@ -1,0 +1,77 @@
+﻿<!-- ======= Hero Section ======= -->
+@*<section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+        <h1>COVID-19 CORONAVIRUS PANDEMIC</h1>
+        <span class="quote">
+            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+            <br />Stay safe. Stay inside.
+
+        </span>
+        <h2>
+            Source:
+            <a href="https://www.ms.gov.tl/covid-19/t2o.php">Ministério da Saúde</a><br />
+            <a href=" https://www.worldometers.info/coronavirus/" target="_blank">Worldometer</a> & <a href="https://corona-stats.online/" target="_blank">Corona-Stats</a>
+        </h2>
+        
+
+       
+
+    <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li><a href="http://covid-19-map.chebre.net" target="_blank" class="btn-get-started">View Map <i class="fa fa-globe"></i></a></li>
+
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li>
+                    <a asp-area="Dashboard" asp-controller="Home" asp-action="Index" class="btn-get-started">Dashboard</a>
+                    </li>
+                <li>
+                    <a href="https://statcounter.com/p12233542/?guest=1" class="btn-get-started" target="_blank">View Covid 19 Stats</a>
+                </li>
+                    }
+                    else
+                    {
+                <li>
+                    <a href="#!" id="btn-account-login" data-url="/Dashboard/Account/Login" data-title="Login" class="btn-get-started">Login</a>
+                    </li>
+                    }
+                
+                
+            </ul>
+    </nav>
+
+    </div>
+</section>*@
+
+    <div class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container banner-container">
+                <h2 class="header center text-lighten-2">COVID-19 CORONAVIRUS PANDEMIC</h2>
+                <div class="row center">
+                    <span class="quote col s12">
+                        There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...<br />Stay safe. Stay inside.
+                    </span>
+                </div>
+                <div class="row center">
+                        <a href="http://covid-19-map.chebre.net" target="_blank" class="banner-button  waves-effect waves-teal">View Map <i class="fa fa-globe"></i></a>
+
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-area="Dashboard" asp-controller="Home" asp-action="Index" class="banner-button  waves-effect waves-teal">Dashboard</a>
+                            <a href="https://statcounter.com/p12233542/?guest=1" class="banner-button  waves-effect waves-teal" target="_blank">View Covid 19 Stats</a>
+                        }
+                        else
+                        {
+                                <a href="#!" id="btn-account-login" data-url="/Dashboard/Account/Login" data-title="Login" 
+                                   class="banner-button waves-effect waves-teal">Login</a>
+                        }
+                </div>
+
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="~/images/banner.jpg" />
+        </div>
+    </div>

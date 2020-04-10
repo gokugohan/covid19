@@ -1,0 +1,49 @@
+﻿@model Covid19.Entities.Models.Quarantine
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h4>Quarantine</h4>
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Munisipio" class="control-label"></label>
+                <input asp-for="Munisipio" class="form-control" />
+                <span asp-validation-for="Munisipio" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="KuarentenaObrigatorio" class="control-label"></label>
+                <input asp-for="KuarentenaObrigatorio" class="form-control" />
+                <span asp-validation-for="KuarentenaObrigatorio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoKuarentena" class="control-label"></label>
+                <input asp-for="AutoKuarentena" class="form-control" />
+                <span asp-validation-for="AutoKuarentena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassaQuarentena" class="control-label"></label>
+                <input asp-for="PassaQuarentena" class="form-control" />
+                <span asp-validation-for="PassaQuarentena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
