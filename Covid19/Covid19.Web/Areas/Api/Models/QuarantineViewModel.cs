@@ -9,7 +9,7 @@ namespace Covid19.Web.Areas.Api.Models
         public int Obrigatorio { get; set; }
         public int Auto { get; set; }
         public int Passa { get; set; }
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
 
     }
 
