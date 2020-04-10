@@ -1,0 +1,11 @@
+﻿#map-canvas {
+    height: 75vh;
+}
+
+.leaflet-control .cases h6{
+    color:#fff;
+}
+    .leaflet-control .cases h6 > span {
+        margin-left: 15px;
+        float: right;
+    }
